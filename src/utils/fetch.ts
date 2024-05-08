@@ -19,7 +19,7 @@ const customFetch = async <T>(url: string, options?: RequestInit): Promise<T> =>
   };
 
   try {
-    const response = await fetch(`${process.env.BASE_URL}${url}`, requestOptions);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${url}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
