@@ -1,7 +1,7 @@
 import fetch from '@/utils/fetch'
 import useSWR from 'swr'
 
-const usePosts = (
+const useGetPosts = (
   search: string = '',
   page: number = 1,
   itemPerPage: number = 10,
@@ -19,4 +19,21 @@ const usePosts = (
   }
 }
 
-export default usePosts
+const createPost = async (body) => {
+  try {
+    const response = await fetch('/posts', {
+      method: 'POST',
+      body: JSON.stringify(body)
+    })
+
+    return response
+  }
+  catch (err) {
+
+  }
+}
+
+export {
+  useGetPosts,
+  createPost
+}
