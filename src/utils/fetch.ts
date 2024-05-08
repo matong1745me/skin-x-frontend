@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3000';
+
 interface ApiResponse<T> {
   status: number;
   data?: T;
@@ -19,7 +19,7 @@ const customFetch = async <T>(url: string, options?: RequestInit): Promise<T> =>
   };
 
   try {
-    const response = await fetch(`${baseUrl}${url}`, requestOptions);
+    const response = await fetch(`${process.env.BASE_URL}${url}`, requestOptions);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
