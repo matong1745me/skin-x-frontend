@@ -15,5 +15,19 @@ module.exports = {
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [nextui({
+    themes: {
+      light: {
+        colors: {
+          primary: {
+            foreground: "#FFFFFF",
+            DEFAULT: "#ff8964",
+          }
+        },
+      },
+      dark: {
+        colors: {},
+      },
+    },
+  })],
 }

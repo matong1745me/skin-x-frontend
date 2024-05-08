@@ -26,24 +26,27 @@ const TagsInput: React.FC = ({ tags, handleTagsChange }) => {
 
   return (
     <div className='flex flex-col gap-2'>
+      <Input
+        color='primary'
+        variant='bordered'
+        value={tagInput}
+        placeholder="Enter tags..."
+        onChange={handleInputChange}
+        onKeyDown={handleInputKeyDown}
+      />
       <div className='flex gap-2'>
         {tags.length > 0 ? tags.map((tag, index) => (
           <Chip
             key={index}
             isCloseable
             onClose={() => handleTagRemove(tag)}
+            color='primary'
           >
             {tag}
           </Chip>
         )):
         'No any tag.'}
       </div>
-      <Input
-        value={tagInput}
-        placeholder="Enter tags..."
-        onChange={handleInputChange}
-        onKeyDown={handleInputKeyDown}
-      />
     </div>
   );
 };

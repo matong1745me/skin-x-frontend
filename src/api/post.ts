@@ -19,6 +19,15 @@ const useGetPosts = (
   }
 }
 
+const useGetPostById = (id) => {
+  const { data, error, isLoading } = useSWR(`/posts/${id}`, fetch)
+  return {
+    data,
+    error,
+    isLoading
+  }
+}
+
 const createPost = async (body) => {
   try {
     const response = await fetch('/posts', {
@@ -35,5 +44,6 @@ const createPost = async (body) => {
 
 export {
   useGetPosts,
+  useGetPostById,
   createPost
 }

@@ -31,11 +31,10 @@ export default function NewPost() {
     <div className="min-h-screen p-10">
       <div className='flex flex-col gap-4'>
         <label>Title</label>
-        <Input className='col-12' value={title} onChange={e => setTitle(e.target.value)} variant='bordered' />
+        <Input className='col-12' value={title} color='primary' onChange={e => setTitle(e.target.value)} variant='bordered' />
         <label>Content</label>
         <RichText body={content} handleBody={setContent}/>
         <label>Tags</label>
-        { tags }
         <TagsInput tags={tags} handleTagsChange={(tags) => setTags(tags)} />
         <Button type='button' isLoading={isLoading} onClick={submit} color='primary'>Submit</Button>
       </div>
