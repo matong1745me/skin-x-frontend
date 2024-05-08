@@ -13,6 +13,9 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        'x-primary': '#ff8964',
+      },
     },
   },
   plugins: [nextui({
@@ -22,6 +25,10 @@ module.exports = {
           primary: {
             foreground: "#FFFFFF",
             DEFAULT: "#ff8964",
+          },
+          secondary: {
+            foreground: "#CCCCCC",
+            DEFAULT: "#FFFFFF",
           }
         },
       },
